@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang='ja'>
+<head>
+<meta charset='UTF-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<title>東京グッド宮入 - プロトタイプLP</title>
+<style>
+  body, html {
+    margin:0; padding:0;
+    font-family: sans-serif;
+    color:#fff;
+    background:#000;
+  }
+  section {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  video.bgvideo {
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.9;
+  }
+  .content {
+    position: relative;
+    background: rgba(0,0,0,0.4);
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    z-index: 1;
+  }
+  a.button-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: #008CBA;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  ul {
+    list-style:none;
+    padding:0;
+    margin:0.5em 0 0 0;
+  }
+  ul li {
+    margin: 0.3em 0;
+  }
+  /* ハンバーガーメニュー */
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hamburger div {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+  /* メニュー本体 */
+  nav#mobile-menu {
+    position: fixed;
+    top: 0; left: 0;
+    width: 200px;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    transform: translateX(-220px);
+    transition: transform 0.3s ease;
+    z-index: 9;
+  }
+  nav#mobile-menu.open {
+    transform: translateX(0);
+  }
+  nav#mobile-menu a {
+    display: block;
+    margin-bottom: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  /* 先頭リンクの上に余白を入れて三本線から離す */
+  nav#mobile-menu a:first-child {
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ハンバーガーメニュー -->
+<div class='hamburger' id='hamburger'>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<nav id='mobile-menu'>
+  <a href='#hero'>トップ</a>
+  <a href='#about'>ブランド紹介</a>
+  <a href='#products'>商品紹介</a>
+  <a href='#contact'>お問い合わせ</a>
+</nav>
+
+<section id='hero'>
+  <video class='bgvideo' autoplay muted loop playsinline preload='auto'>
+    <source src='assets/video/banner.mp4' type='video/mp4' />
+    お使いのブラウザは動画に対応していません。
+  </video>
+  <div class='content'>
+    <h1>下町工場から、<br>あなたのクローゼットへ。</h1>
+    <p>東京グッド宮入が、暮らしになじむ日常服をお届けします。</p>
+    <a href='#about' class='button-link'>ブランド紹介を見る</a>
+  </div>
+</section>
+
+<section id='about'>
+  <video class='bgvideo' autoplay muted loop playsinline preload='auto'>
+    <source src='assets/video/video1.mp4' type='video/mp4' />
+    お使いのブラウザは動画に対応していません。
+  </video>
+  <div class='content'>
+    <h2>ブランド紹介</h2>
+    <p>なぜ今アパレルをやるのか？素材と匠の技を大切に。</p>
+    <a href='#products' class='button-link'>商品紹介を見る</a>
+  </div>
+</section>
+
+<section id='products'>
+  <video class='bgvideo' autoplay muted loop playsinline preload='auto'>
+    <source src='assets/video/video2.mp4' type='video/mp4' />
+    お使いのブラウザは動画に対応していません。
+  </video>
+  <div class='content'>
+    <h2>商品紹介</h2>
+    <ul>
+      <li>ジャケット</li>
+      <li>シャツ</li>
+      <li>パンツ</li>
+    </ul>
+    <a href='#contact' class='button-link'>お問い合わせへ</a>
+  </div>
+</section>
+
+<section id='contact'>
+  <video class='bgvideo' autoplay muted loop playsinline preload='auto'>
+    <source src='assets/video/video3.mp4' type='video/mp4' />
+    お使いのブラウザは動画に対応していません。
+  </video>
+  <div class='content'>
+    <h2>お問い合わせ</h2>
+    <p>ご質問・ご予約はお気軽にどうぞ。</p>
+    <a href='mailto:info@example.com' class='button-link'>メールでお問い合わせ</a>
+  </div>
+</section>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

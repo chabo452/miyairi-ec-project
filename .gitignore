@@ -1,0 +1,6 @@
+﻿# GitHub Pages に不要・容量が大きいファイル
+*.mp4
+*.mov
+assets/video/
+node_modules/
+.DS_Store
